@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h2>Kiểm tra năm nhuận</h2>
+    <input type="number" id="yearInput" placeholder="Nhập năm dương lịch">
+    <button onclick="kiemTraNamNhuan()">Kiểm tra</button>
+
+    <p id="ketQua"></p>
+
+    <script>
+        function kiemTraNamNhuan() {
+            const year = parseInt(document.getElementById("yearInput").value);
+            let ketQua = "";
+
+            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                ketQua = year + " là năm nhuận.";
+            } else {
+                ketQua = year + " không phải là năm nhuận.";
+            }
+
+            document.getElementById("ketQua").textContent = ketQua;
+        }
+    </script>
+</body>
+</html>
